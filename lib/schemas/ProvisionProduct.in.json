@@ -1,0 +1,196 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "AcceptLanguage": {
+                    "description": "<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "NotificationArns": {
+                    "description": "Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.",
+                    "items": {
+                        "maxLength": 1224,
+                        "minLength": 1,
+                        "pattern": "arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
+                        "type": "string"
+                    },
+                    "maxItems": 5,
+                    "type": "array"
+                },
+                "PathId": {
+                    "description": "The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "ProductId": {
+                    "description": "The product identifier.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "ProvisionToken": {
+                    "description": "An idempotency token that uniquely identifies the provisioning request.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+                    "type": "string"
+                },
+                "ProvisionedProductName": {
+                    "description": "A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][a-zA-Z0-9._-]*",
+                    "type": "string"
+                },
+                "ProvisioningArtifactId": {
+                    "description": "The identifier of the provisioning artifact.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "ProvisioningParameters": {
+                    "description": "Parameters specified by the administrator that are required for provisioning the product.",
+                    "items": {
+                        "description": "Information about a parameter used to provision a product.",
+                        "properties": {
+                            "Key": {
+                                "description": "The parameter key.",
+                                "maxLength": 1000,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The parameter value.",
+                                "maxLength": 4096,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ProvisioningPreferences": {
+                    "description": "An object that contains information about the provisioning preferences for a stack set.",
+                    "properties": {
+                        "StackSetAccounts": {
+                            "description": "<p>One or more AWS accounts that will have access to the provisioned product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p> <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>",
+                            "items": {
+                                "pattern": "^[0-9]{12}$",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "StackSetFailureToleranceCount": {
+                            "description": "<p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p> <p>The default value is <code>0</code> if no value is specified.</p>",
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "StackSetFailureTolerancePercentage": {
+                            "description": "<p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p> <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>",
+                            "maximum": 100,
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "StackSetMaxConcurrencyCount": {
+                            "description": "<p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p> <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>",
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        "StackSetMaxConcurrencyPercentage": {
+                            "description": "<p>The maximum percentage of accounts in which to perform this operation at one time.</p> <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p> <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>",
+                            "maximum": 100,
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        "StackSetRegions": {
+                            "description": "<p>One or more AWS Regions where the provisioned product will be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p> <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>",
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "Tags": {
+                    "description": "One or more tags.",
+                    "items": {
+                        "description": "Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.",
+                        "properties": {
+                            "Key": {
+                                "description": "The tag key.",
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value for this key.",
+                                "maxLength": 256,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ],
+                        "type": "object"
+                    },
+                    "maxItems": 50,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "ProductId",
+                "ProvisioningArtifactId",
+                "ProvisionedProductName",
+                "ProvisionToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

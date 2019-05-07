@@ -1,0 +1,82 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "AcceptLanguage": {
+                    "description": "<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "AccessLevelFilter": {
+                    "description": "The access level to use to obtain results. The default is <code>User</code>.",
+                    "properties": {
+                        "Key": {
+                            "description": "<p>The access level.</p> <ul> <li> <p> <code>Account</code> - Filter results based on the account.</p> </li> <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li> <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li> </ul>",
+                            "enum": [
+                                "Account",
+                                "Role",
+                                "User"
+                            ],
+                            "type": "string"
+                        },
+                        "Value": {
+                            "description": "The user to which the access level applies. The only supported value is <code>Self</code>.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "PageSize": {
+                    "description": "The maximum number of items to return with this call.",
+                    "maximum": 20,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "PageToken": {
+                    "description": "The page token for the next set of results. To retrieve the first set of results, use null.",
+                    "maxLength": 2024,
+                    "pattern": "[\\u0009\\u000a\\u000d\\u0020-\\uD7FF\\uE000-\\uFFFD]*",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

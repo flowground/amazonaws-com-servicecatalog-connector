@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "PageSize": {
+            "required": false,
+            "type": "string"
+        },
+        "PageToken": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "PageSize": {
+                    "description": "The maximum number of items to return with this call.",
+                    "maximum": 20,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "PageToken": {
+                    "description": "The page token for the next set of results. To retrieve the first set of results, use null.",
+                    "maxLength": 2024,
+                    "pattern": "[\\u0009\\u000a\\u000d\\u0020-\\uD7FF\\uE000-\\uFFFD]*",
+                    "type": "string"
+                },
+                "ResourceType": {
+                    "description": "<p>The resource type.</p> <ul> <li> <p> <code>Portfolio</code> </p> </li> <li> <p> <code>Product</code> </p> </li> </ul>",
+                    "type": "string"
+                },
+                "TagOptionId": {
+                    "description": "The TagOption identifier.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TagOptionId"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

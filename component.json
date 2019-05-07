@@ -1,0 +1,1349 @@
+{
+    "title": "AWS Service Catalog",
+    "description": "<fullname>AWS Service Catalog</fullname> <p> <a href=\"https://aws.amazon.com/servicecatalog/\">AWS Service Catalog</a> enables organizations to create and manage catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be familiar with the terminology discussed in <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html\">AWS Service Catalog Concepts</a>.</p>",
+    "docsUrl": "https://docs.aws.amazon.com/servicecatalog/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/servicecatalog/2015-12-10/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://servicecatalog.amazonaws.com/",
+                    "http://servicecatalog.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "AcceptPortfolioShare": {
+            "main": "./lib/actions/AcceptPortfolioShare.js",
+            "title": "Accepts an offer to share the specified portfolio.",
+            "description": "Accepts an offer to share the specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AcceptPortfolioShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociatePrincipalWithPortfolio": {
+            "main": "./lib/actions/AssociatePrincipalWithPortfolio.js",
+            "title": "Associates the specified principal ARN with the specified portfolio.",
+            "description": "Associates the specified principal ARN with the specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociatePrincipalWithPortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociateProductWithPortfolio": {
+            "main": "./lib/actions/AssociateProductWithPortfolio.js",
+            "title": "Associates the specified product with the specified portfolio.",
+            "description": "Associates the specified product with the specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateProductWithPortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociateServiceActionWithProvisioningArtifact": {
+            "main": "./lib/actions/AssociateServiceActionWithProvisioningArtifact.js",
+            "title": "Associates a self-service action with a provisioning artifact.",
+            "description": "Associates a self-service action with a provisioning artifact.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateServiceActionWithProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociateTagOptionWithResource": {
+            "main": "./lib/actions/AssociateTagOptionWithResource.js",
+            "title": "Associate the specified TagOption with the specified portfolio or product.",
+            "description": "Associate the specified TagOption with the specified portfolio or product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateTagOptionWithResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "BatchAssociateServiceActionWithProvisioningArtifact": {
+            "main": "./lib/actions/BatchAssociateServiceActionWithProvisioningArtifact.js",
+            "title": "Associates multiple self-service actions with provisioning artifacts.",
+            "description": "Associates multiple self-service actions with provisioning artifacts.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/BatchAssociateServiceActionWithProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "BatchDisassociateServiceActionFromProvisioningArtifact": {
+            "main": "./lib/actions/BatchDisassociateServiceActionFromProvisioningArtifact.js",
+            "title": "Disassociates a batch of self-service actions from the specified provisioning artifact.",
+            "description": "Disassociates a batch of self-service actions from the specified provisioning artifact.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/BatchDisassociateServiceActionFromProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CopyProduct": {
+            "main": "./lib/actions/CopyProduct.js",
+            "title": "<p>Copies the specified source product to the specified target product or a new product.</p> <p>You can copy a product to the same account or another account. You can copy a product to the same region or another region.</p> <p>This operation is performed asynchronously. To track the progress of the operation, use <a>DescribeCopyProductStatus</a>.</p>",
+            "description": "<p>Copies the specified source product to the specified target product or a new product.</p> <p>You can copy a product to the same account or another account. You can copy a product to the same region or another region.</p> <p>This operation is performed asynchronously. To track the progress of the operation, use <a>DescribeCopyProductStatus</a>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CopyProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateConstraint": {
+            "main": "./lib/actions/CreateConstraint.js",
+            "title": "Creates a constraint.",
+            "description": "Creates a constraint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateConstraint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreatePortfolio": {
+            "main": "./lib/actions/CreatePortfolio.js",
+            "title": "Creates a portfolio.",
+            "description": "Creates a portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreatePortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreatePortfolioShare": {
+            "main": "./lib/actions/CreatePortfolioShare.js",
+            "title": "Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.",
+            "description": "Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreatePortfolioShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateProduct": {
+            "main": "./lib/actions/CreateProduct.js",
+            "title": "Creates a product.",
+            "description": "Creates a product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateProvisionedProductPlan": {
+            "main": "./lib/actions/CreateProvisionedProductPlan.js",
+            "title": "<p>Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p> <p>You can create one plan per provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>",
+            "description": "<p>Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p> <p>You can create one plan per provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateProvisionedProductPlan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateProvisioningArtifact": {
+            "main": "./lib/actions/CreateProvisioningArtifact.js",
+            "title": "<p>Creates a provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot create a provisioning artifact for a product that was shared with you.</p>",
+            "description": "<p>Creates a provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot create a provisioning artifact for a product that was shared with you.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateServiceAction": {
+            "main": "./lib/actions/CreateServiceAction.js",
+            "title": "Creates a self-service action.",
+            "description": "Creates a self-service action.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateServiceAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateTagOption": {
+            "main": "./lib/actions/CreateTagOption.js",
+            "title": "Creates a TagOption.",
+            "description": "Creates a TagOption.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateTagOption.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteConstraint": {
+            "main": "./lib/actions/DeleteConstraint.js",
+            "title": "Deletes the specified constraint.",
+            "description": "Deletes the specified constraint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteConstraint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeletePortfolio": {
+            "main": "./lib/actions/DeletePortfolio.js",
+            "title": "<p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or shared accounts.</p>",
+            "description": "<p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or shared accounts.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeletePortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeletePortfolioShare": {
+            "main": "./lib/actions/DeletePortfolioShare.js",
+            "title": "Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the master account of an Organization.",
+            "description": "Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the master account of an Organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeletePortfolioShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteProduct": {
+            "main": "./lib/actions/DeleteProduct.js",
+            "title": "<p>Deletes the specified product.</p> <p>You cannot delete a product if it was shared with you or is associated with a portfolio.</p>",
+            "description": "<p>Deletes the specified product.</p> <p>You cannot delete a product if it was shared with you or is associated with a portfolio.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteProvisionedProductPlan": {
+            "main": "./lib/actions/DeleteProvisionedProductPlan.js",
+            "title": "Deletes the specified plan.",
+            "description": "Deletes the specified plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteProvisionedProductPlan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteProvisioningArtifact": {
+            "main": "./lib/actions/DeleteProvisioningArtifact.js",
+            "title": "<p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>",
+            "description": "<p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteServiceAction": {
+            "main": "./lib/actions/DeleteServiceAction.js",
+            "title": "Deletes a self-service action.",
+            "description": "Deletes a self-service action.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteServiceAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteTagOption": {
+            "main": "./lib/actions/DeleteTagOption.js",
+            "title": "<p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it is associated with a product or portfolio.</p>",
+            "description": "<p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it is associated with a product or portfolio.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteTagOption.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeConstraint": {
+            "main": "./lib/actions/DescribeConstraint.js",
+            "title": "Gets information about the specified constraint.",
+            "description": "Gets information about the specified constraint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeConstraint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeCopyProductStatus": {
+            "main": "./lib/actions/DescribeCopyProductStatus.js",
+            "title": "Gets the status of the specified copy product operation.",
+            "description": "Gets the status of the specified copy product operation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeCopyProductStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribePortfolio": {
+            "main": "./lib/actions/DescribePortfolio.js",
+            "title": "Gets information about the specified portfolio.",
+            "description": "Gets information about the specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribePortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribePortfolioShareStatus": {
+            "main": "./lib/actions/DescribePortfolioShareStatus.js",
+            "title": "Gets the status of the specified portfolio share operation. This API can only be called by the master account in the organization.",
+            "description": "Gets the status of the specified portfolio share operation. This API can only be called by the master account in the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribePortfolioShareStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeProduct": {
+            "main": "./lib/actions/DescribeProduct.js",
+            "title": "Gets information about the specified product.",
+            "description": "Gets information about the specified product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeProductAsAdmin": {
+            "main": "./lib/actions/DescribeProductAsAdmin.js",
+            "title": "Gets information about the specified product. This operation is run with administrator access.",
+            "description": "Gets information about the specified product. This operation is run with administrator access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeProductAsAdmin.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeProductView": {
+            "main": "./lib/actions/DescribeProductView.js",
+            "title": "Gets information about the specified product.",
+            "description": "Gets information about the specified product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeProductView.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeProvisionedProduct": {
+            "main": "./lib/actions/DescribeProvisionedProduct.js",
+            "title": "Gets information about the specified provisioned product.",
+            "description": "Gets information about the specified provisioned product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeProvisionedProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeProvisionedProductPlan": {
+            "main": "./lib/actions/DescribeProvisionedProductPlan.js",
+            "title": "Gets information about the resource changes for the specified plan.",
+            "description": "Gets information about the resource changes for the specified plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeProvisionedProductPlan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeProvisioningArtifact": {
+            "main": "./lib/actions/DescribeProvisioningArtifact.js",
+            "title": "Gets information about the specified provisioning artifact (also known as a version) for the specified product.",
+            "description": "Gets information about the specified provisioning artifact (also known as a version) for the specified product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeProvisioningParameters": {
+            "main": "./lib/actions/DescribeProvisioningParameters.js",
+            "title": "<p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p> <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\". Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>",
+            "description": "<p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p> <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\". Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeProvisioningParameters.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeRecord": {
+            "main": "./lib/actions/DescribeRecord.js",
+            "title": "<p>Gets information about the specified request operation.</p> <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>",
+            "description": "<p>Gets information about the specified request operation.</p> <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeRecord.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeServiceAction": {
+            "main": "./lib/actions/DescribeServiceAction.js",
+            "title": "Describes a self-service action.",
+            "description": "Describes a self-service action.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeServiceAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeTagOption": {
+            "main": "./lib/actions/DescribeTagOption.js",
+            "title": "Gets information about the specified TagOption.",
+            "description": "Gets information about the specified TagOption.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeTagOption.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisableAWSOrganizationsAccess": {
+            "main": "./lib/actions/DisableAWSOrganizationsAccess.js",
+            "title": "Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the master account in the organization.",
+            "description": "Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the master account in the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisableAWSOrganizationsAccess.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociatePrincipalFromPortfolio": {
+            "main": "./lib/actions/DisassociatePrincipalFromPortfolio.js",
+            "title": "Disassociates a previously associated principal ARN from a specified portfolio.",
+            "description": "Disassociates a previously associated principal ARN from a specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociatePrincipalFromPortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateProductFromPortfolio": {
+            "main": "./lib/actions/DisassociateProductFromPortfolio.js",
+            "title": "Disassociates the specified product from the specified portfolio. ",
+            "description": "Disassociates the specified product from the specified portfolio. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateProductFromPortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateServiceActionFromProvisioningArtifact": {
+            "main": "./lib/actions/DisassociateServiceActionFromProvisioningArtifact.js",
+            "title": "Disassociates the specified self-service action association from the specified provisioning artifact.",
+            "description": "Disassociates the specified self-service action association from the specified provisioning artifact.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateServiceActionFromProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateTagOptionFromResource": {
+            "main": "./lib/actions/DisassociateTagOptionFromResource.js",
+            "title": "Disassociates the specified TagOption from the specified resource.",
+            "description": "Disassociates the specified TagOption from the specified resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateTagOptionFromResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EnableAWSOrganizationsAccess": {
+            "main": "./lib/actions/EnableAWSOrganizationsAccess.js",
+            "title": "<p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the master account in the organization.</p> <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>",
+            "description": "<p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the master account in the organization.</p> <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EnableAWSOrganizationsAccess.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExecuteProvisionedProductPlan": {
+            "main": "./lib/actions/ExecuteProvisionedProductPlan.js",
+            "title": "Provisions or modifies a product based on the resource changes for the specified plan.",
+            "description": "Provisions or modifies a product based on the resource changes for the specified plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExecuteProvisionedProductPlan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExecuteProvisionedProductServiceAction": {
+            "main": "./lib/actions/ExecuteProvisionedProductServiceAction.js",
+            "title": "Executes a self-service action against a provisioned product.",
+            "description": "Executes a self-service action against a provisioned product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExecuteProvisionedProductServiceAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetAWSOrganizationsAccessStatus": {
+            "main": "./lib/actions/GetAWSOrganizationsAccessStatus.js",
+            "title": "Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master account in the organization.",
+            "description": "Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master account in the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetAWSOrganizationsAccessStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListAcceptedPortfolioShares": {
+            "main": "./lib/actions/ListAcceptedPortfolioShares.js",
+            "title": "Lists all portfolios for which sharing was accepted by this account.",
+            "description": "Lists all portfolios for which sharing was accepted by this account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListAcceptedPortfolioShares.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListConstraintsForPortfolio": {
+            "main": "./lib/actions/ListConstraintsForPortfolio.js",
+            "title": "Lists the constraints for the specified portfolio and product.",
+            "description": "Lists the constraints for the specified portfolio and product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListConstraintsForPortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListLaunchPaths": {
+            "main": "./lib/actions/ListLaunchPaths.js",
+            "title": "Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.",
+            "description": "Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListLaunchPaths.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListOrganizationPortfolioAccess": {
+            "main": "./lib/actions/ListOrganizationPortfolioAccess.js",
+            "title": "Lists the organization nodes that have access to the specified portfolio. This API can only be called by the master account in the organization.",
+            "description": "Lists the organization nodes that have access to the specified portfolio. This API can only be called by the master account in the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListOrganizationPortfolioAccess.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPortfolioAccess": {
+            "main": "./lib/actions/ListPortfolioAccess.js",
+            "title": "Lists the account IDs that have access to the specified portfolio.",
+            "description": "Lists the account IDs that have access to the specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPortfolioAccess.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPortfolios": {
+            "main": "./lib/actions/ListPortfolios.js",
+            "title": "Lists all portfolios in the catalog.",
+            "description": "Lists all portfolios in the catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPortfolios.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPortfoliosForProduct": {
+            "main": "./lib/actions/ListPortfoliosForProduct.js",
+            "title": "Lists all portfolios that the specified product is associated with.",
+            "description": "Lists all portfolios that the specified product is associated with.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPortfoliosForProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPrincipalsForPortfolio": {
+            "main": "./lib/actions/ListPrincipalsForPortfolio.js",
+            "title": "Lists all principal ARNs associated with the specified portfolio.",
+            "description": "Lists all principal ARNs associated with the specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPrincipalsForPortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListProvisionedProductPlans": {
+            "main": "./lib/actions/ListProvisionedProductPlans.js",
+            "title": "Lists the plans for the specified provisioned product or all plans to which the user has access.",
+            "description": "Lists the plans for the specified provisioned product or all plans to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListProvisionedProductPlans.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListProvisioningArtifacts": {
+            "main": "./lib/actions/ListProvisioningArtifacts.js",
+            "title": "Lists all provisioning artifacts (also known as versions) for the specified product.",
+            "description": "Lists all provisioning artifacts (also known as versions) for the specified product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListProvisioningArtifacts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListProvisioningArtifactsForServiceAction": {
+            "main": "./lib/actions/ListProvisioningArtifactsForServiceAction.js",
+            "title": "Lists all provisioning artifacts (also known as versions) for the specified self-service action.",
+            "description": "Lists all provisioning artifacts (also known as versions) for the specified self-service action.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListProvisioningArtifactsForServiceAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListRecordHistory": {
+            "main": "./lib/actions/ListRecordHistory.js",
+            "title": "Lists the specified requests or all performed requests.",
+            "description": "Lists the specified requests or all performed requests.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListRecordHistory.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListResourcesForTagOption": {
+            "main": "./lib/actions/ListResourcesForTagOption.js",
+            "title": "Lists the resources associated with the specified TagOption.",
+            "description": "Lists the resources associated with the specified TagOption.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListResourcesForTagOption.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListServiceActions": {
+            "main": "./lib/actions/ListServiceActions.js",
+            "title": "Lists all self-service actions.",
+            "description": "Lists all self-service actions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListServiceActions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListServiceActionsForProvisioningArtifact": {
+            "main": "./lib/actions/ListServiceActionsForProvisioningArtifact.js",
+            "title": "Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.",
+            "description": "Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListServiceActionsForProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTagOptions": {
+            "main": "./lib/actions/ListTagOptions.js",
+            "title": "Lists the specified TagOptions or all TagOptions.",
+            "description": "Lists the specified TagOptions or all TagOptions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTagOptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProvisionProduct": {
+            "main": "./lib/actions/ProvisionProduct.js",
+            "title": "<p>Provisions the specified product.</p> <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\".</p>",
+            "description": "<p>Provisions the specified product.</p> <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\".</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProvisionProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RejectPortfolioShare": {
+            "main": "./lib/actions/RejectPortfolioShare.js",
+            "title": "Rejects an offer to share the specified portfolio.",
+            "description": "Rejects an offer to share the specified portfolio.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RejectPortfolioShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ScanProvisionedProducts": {
+            "main": "./lib/actions/ScanProvisionedProducts.js",
+            "title": "<p>Lists the provisioned products that are available (not terminated).</p> <p>To use additional filtering, see <a>SearchProvisionedProducts</a>.</p>",
+            "description": "<p>Lists the provisioned products that are available (not terminated).</p> <p>To use additional filtering, see <a>SearchProvisionedProducts</a>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ScanProvisionedProducts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SearchProducts": {
+            "main": "./lib/actions/SearchProducts.js",
+            "title": "Gets information about the products to which the caller has access.",
+            "description": "Gets information about the products to which the caller has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SearchProducts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SearchProductsAsAdmin": {
+            "main": "./lib/actions/SearchProductsAsAdmin.js",
+            "title": "Gets information about the products for the specified portfolio or all products.",
+            "description": "Gets information about the products for the specified portfolio or all products.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SearchProductsAsAdmin.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SearchProvisionedProducts": {
+            "main": "./lib/actions/SearchProvisionedProducts.js",
+            "title": "Gets information about the provisioned products that meet the specified criteria.",
+            "description": "Gets information about the provisioned products that meet the specified criteria.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SearchProvisionedProducts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TerminateProvisionedProduct": {
+            "main": "./lib/actions/TerminateProvisionedProduct.js",
+            "title": "<p>Terminates the specified provisioned product.</p> <p>This operation does not delete any records associated with the provisioned product.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
+            "description": "<p>Terminates the specified provisioned product.</p> <p>This operation does not delete any records associated with the provisioned product.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TerminateProvisionedProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateConstraint": {
+            "main": "./lib/actions/UpdateConstraint.js",
+            "title": "Updates the specified constraint.",
+            "description": "Updates the specified constraint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateConstraint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdatePortfolio": {
+            "main": "./lib/actions/UpdatePortfolio.js",
+            "title": "<p>Updates the specified portfolio.</p> <p>You cannot update a product that was shared with you.</p>",
+            "description": "<p>Updates the specified portfolio.</p> <p>You cannot update a product that was shared with you.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdatePortfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateProduct": {
+            "main": "./lib/actions/UpdateProduct.js",
+            "title": "Updates the specified product.",
+            "description": "Updates the specified product.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateProvisionedProduct": {
+            "main": "./lib/actions/UpdateProvisionedProduct.js",
+            "title": "<p>Requests updates to the configuration of the specified provisioned product.</p> <p>If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
+            "description": "<p>Requests updates to the configuration of the specified provisioned product.</p> <p>If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateProvisionedProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateProvisioningArtifact": {
+            "main": "./lib/actions/UpdateProvisioningArtifact.js",
+            "title": "<p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot update a provisioning artifact for a product that was shared with you.</p>",
+            "description": "<p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot update a provisioning artifact for a product that was shared with you.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateProvisioningArtifact.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateServiceAction": {
+            "main": "./lib/actions/UpdateServiceAction.js",
+            "title": "Updates a self-service action.",
+            "description": "Updates a self-service action.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateServiceAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateTagOption": {
+            "main": "./lib/actions/UpdateTagOption.js",
+            "title": "Updates the specified TagOption.",
+            "description": "Updates the specified TagOption.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateTagOption.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

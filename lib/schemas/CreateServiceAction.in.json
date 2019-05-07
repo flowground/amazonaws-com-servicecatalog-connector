@@ -1,0 +1,108 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "AcceptLanguage": {
+                    "description": "<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "Definition": {
+                    "description": "<p>The self-service action definition. Can be one of the following:</p> <dl> <dt>Name</dt> <dd> <p>The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.</p> </dd> <dt>Version</dt> <dd> <p>The AWS Systems Manager automation document version. For example, <code>\"Version\": \"1\"</code> </p> </dd> <dt>AssumeRole</dt> <dd> <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>\"AssumeRole\": \"arn:aws:iam::12345678910:role/ActionRole\"</code>.</p> <p>To reuse the provisioned product launch role, set to <code>\"AssumeRole\": \"LAUNCH_ROLE\"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of parameters in JSON format.</p> <p>For example: <code>[{\\\"Name\\\":\\\"InstanceId\\\",\\\"Type\\\":\\\"TARGET\\\"}]</code>.</p> </dd> </dl>",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "enum": [
+                                    "Name",
+                                    "Version",
+                                    "AssumeRole",
+                                    "Parameters"
+                                ],
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 1024,
+                                "minLength": 1,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 100,
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "DefinitionType": {
+                    "description": "The service action definition type. For example, <code>SSM_AUTOMATION</code>.",
+                    "enum": [
+                        "SSM_AUTOMATION"
+                    ],
+                    "type": "string"
+                },
+                "Description": {
+                    "description": "The self-service action description.",
+                    "maxLength": 1024,
+                    "type": "string"
+                },
+                "IdempotencyToken": {
+                    "description": "A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+                    "type": "string"
+                },
+                "Name": {
+                    "description": "The self-service action name.",
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-.]*",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "DefinitionType",
+                "Definition",
+                "IdempotencyToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "AcceptLanguage": {
+                    "description": "<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "AddTags": {
+                    "description": "The tags to add to the product.",
+                    "items": {
+                        "description": "Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.",
+                        "properties": {
+                            "Key": {
+                                "description": "The tag key.",
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value for this key.",
+                                "maxLength": 256,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ],
+                        "type": "object"
+                    },
+                    "maxItems": 20,
+                    "type": "array"
+                },
+                "Description": {
+                    "description": "The updated description of the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "Distributor": {
+                    "description": "The updated distributor of the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "Id": {
+                    "description": "The product identifier.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "Name": {
+                    "description": "The updated product name.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "Owner": {
+                    "description": "The updated owner of the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "RemoveTags": {
+                    "description": "The tags to remove from the product.",
+                    "items": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "SupportDescription": {
+                    "description": "The updated support description for the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "SupportEmail": {
+                    "description": "The updated support email for the product.",
+                    "maxLength": 254,
+                    "type": "string"
+                },
+                "SupportUrl": {
+                    "description": "The updated support URL for the product.",
+                    "maxLength": 2083,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

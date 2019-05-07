@@ -1,0 +1,170 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "AcceptLanguage": {
+                    "description": "<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "IdempotencyToken": {
+                    "description": "A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+                    "type": "string"
+                },
+                "NotificationArns": {
+                    "description": "Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.",
+                    "items": {
+                        "maxLength": 1224,
+                        "minLength": 1,
+                        "pattern": "arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
+                        "type": "string"
+                    },
+                    "maxItems": 5,
+                    "type": "array"
+                },
+                "PathId": {
+                    "description": "The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "PlanName": {
+                    "description": "The name of the plan.",
+                    "type": "string"
+                },
+                "PlanType": {
+                    "description": "The plan type.",
+                    "enum": [
+                        "CLOUDFORMATION"
+                    ],
+                    "type": "string"
+                },
+                "ProductId": {
+                    "description": "The product identifier.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "ProvisionedProductName": {
+                    "description": "A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][a-zA-Z0-9._-]*",
+                    "type": "string"
+                },
+                "ProvisioningArtifactId": {
+                    "description": "The identifier of the provisioning artifact.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "ProvisioningParameters": {
+                    "description": "Parameters specified by the administrator that are required for provisioning the product.",
+                    "items": {
+                        "description": "The parameter key-value pair used to update a provisioned product.",
+                        "properties": {
+                            "Key": {
+                                "description": "The parameter key.",
+                                "maxLength": 1000,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "UsePreviousValue": {
+                                "description": "If set to true, <code>Value</code> is ignored and the previous parameter value is kept.",
+                                "type": "boolean"
+                            },
+                            "Value": {
+                                "description": "The parameter value.",
+                                "maxLength": 4096,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "Tags": {
+                    "description": "One or more tags.",
+                    "items": {
+                        "description": "Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.",
+                        "properties": {
+                            "Key": {
+                                "description": "The tag key.",
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value for this key.",
+                                "maxLength": 256,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ],
+                        "type": "object"
+                    },
+                    "maxItems": 50,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "PlanName",
+                "PlanType",
+                "ProductId",
+                "ProvisionedProductName",
+                "ProvisioningArtifactId",
+                "IdempotencyToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

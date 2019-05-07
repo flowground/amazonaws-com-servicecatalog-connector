@@ -1,0 +1,181 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "AcceptLanguage": {
+                    "description": "<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "Description": {
+                    "description": "The description of the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "Distributor": {
+                    "description": "The distributor of the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "IdempotencyToken": {
+                    "description": "A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+                    "type": "string"
+                },
+                "Name": {
+                    "description": "The name of the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "Owner": {
+                    "description": "The owner of the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "ProductType": {
+                    "description": "The type of product.",
+                    "enum": [
+                        "CLOUD_FORMATION_TEMPLATE",
+                        "MARKETPLACE"
+                    ],
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "ProvisioningArtifactParameters": {
+                    "description": "The configuration of the provisioning artifact.",
+                    "properties": {
+                        "Description": {
+                            "description": "The description of the provisioning artifact, including how it differs from the previous provisioning artifact.",
+                            "type": "string"
+                        },
+                        "Info": {
+                            "description": "<p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p> <p> <code>\"LoadTemplateFromURL\": \"https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/...\"</code> </p>",
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "maxItems": 100,
+                            "minItems": 1,
+                            "type": "array"
+                        },
+                        "Name": {
+                            "description": "The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.",
+                            "type": "string"
+                        },
+                        "Type": {
+                            "description": "<p>The type of provisioning artifact.</p> <ul> <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li> <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li> </ul>",
+                            "enum": [
+                                "CLOUD_FORMATION_TEMPLATE",
+                                "MARKETPLACE_AMI",
+                                "MARKETPLACE_CAR"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Info"
+                    ],
+                    "type": "object"
+                },
+                "SupportDescription": {
+                    "description": "The support information about the product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                },
+                "SupportEmail": {
+                    "description": "The contact email for product support.",
+                    "maxLength": 254,
+                    "type": "string"
+                },
+                "SupportUrl": {
+                    "description": "The contact URL for product support.",
+                    "maxLength": 2083,
+                    "type": "string"
+                },
+                "Tags": {
+                    "description": "One or more tags.",
+                    "items": {
+                        "description": "Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.",
+                        "properties": {
+                            "Key": {
+                                "description": "The tag key.",
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value for this key.",
+                                "maxLength": 256,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ],
+                        "type": "object"
+                    },
+                    "maxItems": 20,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "Name",
+                "Owner",
+                "ProductType",
+                "ProvisioningArtifactParameters",
+                "IdempotencyToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

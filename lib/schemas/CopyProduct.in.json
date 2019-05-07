@@ -1,0 +1,112 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "AcceptLanguage": {
+                    "description": "<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "CopyOptions": {
+                    "description": "The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.",
+                    "items": {
+                        "enum": [
+                            "CopyTags"
+                        ],
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "IdempotencyToken": {
+                    "description": " A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. ",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+                    "type": "string"
+                },
+                "SourceProductArn": {
+                    "description": "The Amazon Resource Name (ARN) of the source product.",
+                    "maxLength": 1224,
+                    "minLength": 1,
+                    "pattern": "arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
+                    "type": "string"
+                },
+                "SourceProvisioningArtifactIdentifiers": {
+                    "description": "The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.",
+                    "items": {
+                        "items": {
+                            "properties": {
+                                "key": {
+                                    "enum": [
+                                        "Id"
+                                    ],
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "type": "array"
+                },
+                "TargetProductId": {
+                    "description": "The identifier of the target product. By default, a new product is created.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "TargetProductName": {
+                    "description": "A name for the target product. The default is the name of the source product.",
+                    "maxLength": 8191,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceProductArn",
+                "IdempotencyToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
