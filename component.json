@@ -1,6 +1,6 @@
 {
     "title": "AWS Service Catalog",
-    "description": "<fullname>AWS Service Catalog</fullname> <p> <a href=\"https://aws.amazon.com/servicecatalog/\">AWS Service Catalog</a> enables organizations to create and manage catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be familiar with the terminology discussed in <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html\">AWS Service Catalog Concepts</a>.</p>",
+    "description": "AWS Service Catalog  AWS Service Catalog [https://aws.amazon.com/servicecatalog/] enables\norganizations to create and manage catalogs of IT services that are approved for\nuse on AWS. To get the most out of this documentation, you should be familiar\nwith the terminology discussed in AWS Service Catalog Concepts\n[http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html]\n.",
     "docsUrl": "https://docs.aws.amazon.com/servicecatalog/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/servicecatalog/2015-12-10/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "AcceptPortfolioShare": {
             "main": "./lib/actions/AcceptPortfolioShare.js",
-            "title": "Accepts an offer to share the specified portfolio.",
+            "title": "AcceptPortfolioShare",
             "description": "Accepts an offer to share the specified portfolio.",
             "fields": {
                 "verbose": {
@@ -55,7 +55,7 @@
         },
         "AssociatePrincipalWithPortfolio": {
             "main": "./lib/actions/AssociatePrincipalWithPortfolio.js",
-            "title": "Associates the specified principal ARN with the specified portfolio.",
+            "title": "AssociatePrincipalWithPortfolio",
             "description": "Associates the specified principal ARN with the specified portfolio.",
             "fields": {
                 "verbose": {
@@ -72,7 +72,7 @@
         },
         "AssociateProductWithPortfolio": {
             "main": "./lib/actions/AssociateProductWithPortfolio.js",
-            "title": "Associates the specified product with the specified portfolio.",
+            "title": "AssociateProductWithPortfolio",
             "description": "Associates the specified product with the specified portfolio.",
             "fields": {
                 "verbose": {
@@ -89,7 +89,7 @@
         },
         "AssociateServiceActionWithProvisioningArtifact": {
             "main": "./lib/actions/AssociateServiceActionWithProvisioningArtifact.js",
-            "title": "Associates a self-service action with a provisioning artifact.",
+            "title": "AssociateServiceActionWithProvisioningArtifact",
             "description": "Associates a self-service action with a provisioning artifact.",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "AssociateTagOptionWithResource": {
             "main": "./lib/actions/AssociateTagOptionWithResource.js",
-            "title": "Associate the specified TagOption with the specified portfolio or product.",
+            "title": "AssociateTagOptionWithResource",
             "description": "Associate the specified TagOption with the specified portfolio or product.",
             "fields": {
                 "verbose": {
@@ -123,7 +123,7 @@
         },
         "BatchAssociateServiceActionWithProvisioningArtifact": {
             "main": "./lib/actions/BatchAssociateServiceActionWithProvisioningArtifact.js",
-            "title": "Associates multiple self-service actions with provisioning artifacts.",
+            "title": "BatchAssociateServiceActionWithProvisioningArtifact",
             "description": "Associates multiple self-service actions with provisioning artifacts.",
             "fields": {
                 "verbose": {
@@ -140,7 +140,7 @@
         },
         "BatchDisassociateServiceActionFromProvisioningArtifact": {
             "main": "./lib/actions/BatchDisassociateServiceActionFromProvisioningArtifact.js",
-            "title": "Disassociates a batch of self-service actions from the specified provisioning artifact.",
+            "title": "BatchDisassociateServiceActionFromProvisioningArtifact",
             "description": "Disassociates a batch of self-service actions from the specified provisioning artifact.",
             "fields": {
                 "verbose": {
@@ -157,8 +157,8 @@
         },
         "CopyProduct": {
             "main": "./lib/actions/CopyProduct.js",
-            "title": "<p>Copies the specified source product to the specified target product or a new product.</p> <p>You can copy a product to the same account or another account. You can copy a product to the same region or another region.</p> <p>This operation is performed asynchronously. To track the progress of the operation, use <a>DescribeCopyProductStatus</a>.</p>",
-            "description": "<p>Copies the specified source product to the specified target product or a new product.</p> <p>You can copy a product to the same account or another account. You can copy a product to the same region or another region.</p> <p>This operation is performed asynchronously. To track the progress of the operation, use <a>DescribeCopyProductStatus</a>.</p>",
+            "title": "CopyProduct",
+            "description": "Copies the specified source product to the specified target product or a new\nproduct.\n\nYou can copy a product to the same account or another account. You can copy a\nproduct to the same region or another region.\n\nThis operation is performed asynchronously. To track the progress of the\noperation, use DescribeCopyProductStatus.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -174,7 +174,7 @@
         },
         "CreateConstraint": {
             "main": "./lib/actions/CreateConstraint.js",
-            "title": "Creates a constraint.",
+            "title": "CreateConstraint",
             "description": "Creates a constraint.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "CreatePortfolio": {
             "main": "./lib/actions/CreatePortfolio.js",
-            "title": "Creates a portfolio.",
+            "title": "CreatePortfolio",
             "description": "Creates a portfolio.",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "CreatePortfolioShare": {
             "main": "./lib/actions/CreatePortfolioShare.js",
-            "title": "Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.",
+            "title": "CreatePortfolioShare",
             "description": "Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "CreateProduct": {
             "main": "./lib/actions/CreateProduct.js",
-            "title": "Creates a product.",
+            "title": "CreateProduct",
             "description": "Creates a product.",
             "fields": {
                 "verbose": {
@@ -242,8 +242,8 @@
         },
         "CreateProvisionedProductPlan": {
             "main": "./lib/actions/CreateProvisionedProductPlan.js",
-            "title": "<p>Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p> <p>You can create one plan per provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>",
-            "description": "<p>Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p> <p>You can create one plan per provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>",
+            "title": "CreateProvisionedProductPlan",
+            "description": "Creates a plan. A plan includes the list of resources to be created (when\nprovisioning a new product) or modified (when updating a provisioned product)\nwhen the plan is executed.\n\nYou can create one plan per provisioned product. To create a plan for an\nexisting provisioned product, the product status must be AVAILBLE or TAINTED.\n\nTo view the resource changes in the change set, use \nDescribeProvisionedProductPlan. To create or modify the provisioned product, use \nExecuteProvisionedProductPlan.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -259,8 +259,8 @@
         },
         "CreateProvisioningArtifact": {
             "main": "./lib/actions/CreateProvisioningArtifact.js",
-            "title": "<p>Creates a provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot create a provisioning artifact for a product that was shared with you.</p>",
-            "description": "<p>Creates a provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot create a provisioning artifact for a product that was shared with you.</p>",
+            "title": "CreateProvisioningArtifact",
+            "description": "Creates a provisioning artifact (also known as a version) for the specified\nproduct.\n\nYou cannot create a provisioning artifact for a product that was shared with\nyou.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -276,7 +276,7 @@
         },
         "CreateServiceAction": {
             "main": "./lib/actions/CreateServiceAction.js",
-            "title": "Creates a self-service action.",
+            "title": "CreateServiceAction",
             "description": "Creates a self-service action.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "CreateTagOption": {
             "main": "./lib/actions/CreateTagOption.js",
-            "title": "Creates a TagOption.",
+            "title": "CreateTagOption",
             "description": "Creates a TagOption.",
             "fields": {
                 "verbose": {
@@ -310,7 +310,7 @@
         },
         "DeleteConstraint": {
             "main": "./lib/actions/DeleteConstraint.js",
-            "title": "Deletes the specified constraint.",
+            "title": "DeleteConstraint",
             "description": "Deletes the specified constraint.",
             "fields": {
                 "verbose": {
@@ -327,8 +327,8 @@
         },
         "DeletePortfolio": {
             "main": "./lib/actions/DeletePortfolio.js",
-            "title": "<p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or shared accounts.</p>",
-            "description": "<p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or shared accounts.</p>",
+            "title": "DeletePortfolio",
+            "description": "Deletes the specified portfolio.\n\nYou cannot delete a portfolio if it was shared with you or if it has associated\nproducts, users, constraints, or shared accounts.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -344,7 +344,7 @@
         },
         "DeletePortfolioShare": {
             "main": "./lib/actions/DeletePortfolioShare.js",
-            "title": "Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the master account of an Organization.",
+            "title": "DeletePortfolioShare",
             "description": "Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the master account of an Organization.",
             "fields": {
                 "verbose": {
@@ -361,8 +361,8 @@
         },
         "DeleteProduct": {
             "main": "./lib/actions/DeleteProduct.js",
-            "title": "<p>Deletes the specified product.</p> <p>You cannot delete a product if it was shared with you or is associated with a portfolio.</p>",
-            "description": "<p>Deletes the specified product.</p> <p>You cannot delete a product if it was shared with you or is associated with a portfolio.</p>",
+            "title": "DeleteProduct",
+            "description": "Deletes the specified product.\n\nYou cannot delete a product if it was shared with you or is associated with a\nportfolio.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -378,7 +378,7 @@
         },
         "DeleteProvisionedProductPlan": {
             "main": "./lib/actions/DeleteProvisionedProductPlan.js",
-            "title": "Deletes the specified plan.",
+            "title": "DeleteProvisionedProductPlan",
             "description": "Deletes the specified plan.",
             "fields": {
                 "verbose": {
@@ -395,8 +395,8 @@
         },
         "DeleteProvisioningArtifact": {
             "main": "./lib/actions/DeleteProvisioningArtifact.js",
-            "title": "<p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>",
-            "description": "<p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>",
+            "title": "DeleteProvisioningArtifact",
+            "description": "Deletes the specified provisioning artifact (also known as a version) for the\nspecified product.\n\nYou cannot delete a provisioning artifact associated with a product that was\nshared with you. You cannot delete the last provisioning artifact for a product,\nbecause a product must have at least one provisioning artifact.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -412,7 +412,7 @@
         },
         "DeleteServiceAction": {
             "main": "./lib/actions/DeleteServiceAction.js",
-            "title": "Deletes a self-service action.",
+            "title": "DeleteServiceAction",
             "description": "Deletes a self-service action.",
             "fields": {
                 "verbose": {
@@ -429,8 +429,8 @@
         },
         "DeleteTagOption": {
             "main": "./lib/actions/DeleteTagOption.js",
-            "title": "<p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it is associated with a product or portfolio.</p>",
-            "description": "<p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it is associated with a product or portfolio.</p>",
+            "title": "DeleteTagOption",
+            "description": "Deletes the specified TagOption.\n\nYou cannot delete a TagOption if it is associated with a product or portfolio.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -446,7 +446,7 @@
         },
         "DescribeConstraint": {
             "main": "./lib/actions/DescribeConstraint.js",
-            "title": "Gets information about the specified constraint.",
+            "title": "DescribeConstraint",
             "description": "Gets information about the specified constraint.",
             "fields": {
                 "verbose": {
@@ -463,7 +463,7 @@
         },
         "DescribeCopyProductStatus": {
             "main": "./lib/actions/DescribeCopyProductStatus.js",
-            "title": "Gets the status of the specified copy product operation.",
+            "title": "DescribeCopyProductStatus",
             "description": "Gets the status of the specified copy product operation.",
             "fields": {
                 "verbose": {
@@ -480,7 +480,7 @@
         },
         "DescribePortfolio": {
             "main": "./lib/actions/DescribePortfolio.js",
-            "title": "Gets information about the specified portfolio.",
+            "title": "DescribePortfolio",
             "description": "Gets information about the specified portfolio.",
             "fields": {
                 "verbose": {
@@ -497,7 +497,7 @@
         },
         "DescribePortfolioShareStatus": {
             "main": "./lib/actions/DescribePortfolioShareStatus.js",
-            "title": "Gets the status of the specified portfolio share operation. This API can only be called by the master account in the organization.",
+            "title": "DescribePortfolioShareStatus",
             "description": "Gets the status of the specified portfolio share operation. This API can only be called by the master account in the organization.",
             "fields": {
                 "verbose": {
@@ -514,7 +514,7 @@
         },
         "DescribeProduct": {
             "main": "./lib/actions/DescribeProduct.js",
-            "title": "Gets information about the specified product.",
+            "title": "DescribeProduct",
             "description": "Gets information about the specified product.",
             "fields": {
                 "verbose": {
@@ -531,7 +531,7 @@
         },
         "DescribeProductAsAdmin": {
             "main": "./lib/actions/DescribeProductAsAdmin.js",
-            "title": "Gets information about the specified product. This operation is run with administrator access.",
+            "title": "DescribeProductAsAdmin",
             "description": "Gets information about the specified product. This operation is run with administrator access.",
             "fields": {
                 "verbose": {
@@ -548,7 +548,7 @@
         },
         "DescribeProductView": {
             "main": "./lib/actions/DescribeProductView.js",
-            "title": "Gets information about the specified product.",
+            "title": "DescribeProductView",
             "description": "Gets information about the specified product.",
             "fields": {
                 "verbose": {
@@ -565,7 +565,7 @@
         },
         "DescribeProvisionedProduct": {
             "main": "./lib/actions/DescribeProvisionedProduct.js",
-            "title": "Gets information about the specified provisioned product.",
+            "title": "DescribeProvisionedProduct",
             "description": "Gets information about the specified provisioned product.",
             "fields": {
                 "verbose": {
@@ -582,7 +582,7 @@
         },
         "DescribeProvisionedProductPlan": {
             "main": "./lib/actions/DescribeProvisionedProductPlan.js",
-            "title": "Gets information about the resource changes for the specified plan.",
+            "title": "DescribeProvisionedProductPlan",
             "description": "Gets information about the resource changes for the specified plan.",
             "fields": {
                 "verbose": {
@@ -599,7 +599,7 @@
         },
         "DescribeProvisioningArtifact": {
             "main": "./lib/actions/DescribeProvisioningArtifact.js",
-            "title": "Gets information about the specified provisioning artifact (also known as a version) for the specified product.",
+            "title": "DescribeProvisioningArtifact",
             "description": "Gets information about the specified provisioning artifact (also known as a version) for the specified product.",
             "fields": {
                 "verbose": {
@@ -616,8 +616,8 @@
         },
         "DescribeProvisioningParameters": {
             "main": "./lib/actions/DescribeProvisioningParameters.js",
-            "title": "<p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p> <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\". Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>",
-            "description": "<p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p> <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\". Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>",
+            "title": "DescribeProvisioningParameters",
+            "description": "Gets information about the configuration required to provision the specified\nproduct using the specified provisioning artifact.\n\nIf the output contains a TagOption key with an empty list of values, there is a\nTagOption conflict for that key. The end user cannot take action to fix the\nconflict, and launch is not blocked. In subsequent calls to ProvisionProduct, do\nnot include conflicted TagOption keys as tags, or this causes the error\n\"Parameter validation failed: Missing required parameter in Tags[N]:Value\". Tag\nthe provisioned product with the value \nsc-tagoption-conflict-portfolioId-productId.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -633,8 +633,8 @@
         },
         "DescribeRecord": {
             "main": "./lib/actions/DescribeRecord.js",
-            "title": "<p>Gets information about the specified request operation.</p> <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>",
-            "description": "<p>Gets information about the specified request operation.</p> <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>",
+            "title": "DescribeRecord",
+            "description": "Gets information about the specified request operation.\n\nUse this operation after calling a request operation (for example, \nProvisionProduct, TerminateProvisionedProduct, or UpdateProvisionedProduct).",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -650,7 +650,7 @@
         },
         "DescribeServiceAction": {
             "main": "./lib/actions/DescribeServiceAction.js",
-            "title": "Describes a self-service action.",
+            "title": "DescribeServiceAction",
             "description": "Describes a self-service action.",
             "fields": {
                 "verbose": {
@@ -667,7 +667,7 @@
         },
         "DescribeTagOption": {
             "main": "./lib/actions/DescribeTagOption.js",
-            "title": "Gets information about the specified TagOption.",
+            "title": "DescribeTagOption",
             "description": "Gets information about the specified TagOption.",
             "fields": {
                 "verbose": {
@@ -684,7 +684,7 @@
         },
         "DisableAWSOrganizationsAccess": {
             "main": "./lib/actions/DisableAWSOrganizationsAccess.js",
-            "title": "Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the master account in the organization.",
+            "title": "DisableAWSOrganizationsAccess",
             "description": "Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the master account in the organization.",
             "fields": {
                 "verbose": {
@@ -701,7 +701,7 @@
         },
         "DisassociatePrincipalFromPortfolio": {
             "main": "./lib/actions/DisassociatePrincipalFromPortfolio.js",
-            "title": "Disassociates a previously associated principal ARN from a specified portfolio.",
+            "title": "DisassociatePrincipalFromPortfolio",
             "description": "Disassociates a previously associated principal ARN from a specified portfolio.",
             "fields": {
                 "verbose": {
@@ -718,7 +718,7 @@
         },
         "DisassociateProductFromPortfolio": {
             "main": "./lib/actions/DisassociateProductFromPortfolio.js",
-            "title": "Disassociates the specified product from the specified portfolio. ",
+            "title": "DisassociateProductFromPortfolio",
             "description": "Disassociates the specified product from the specified portfolio. ",
             "fields": {
                 "verbose": {
@@ -735,7 +735,7 @@
         },
         "DisassociateServiceActionFromProvisioningArtifact": {
             "main": "./lib/actions/DisassociateServiceActionFromProvisioningArtifact.js",
-            "title": "Disassociates the specified self-service action association from the specified provisioning artifact.",
+            "title": "DisassociateServiceActionFromProvisioningArtifact",
             "description": "Disassociates the specified self-service action association from the specified provisioning artifact.",
             "fields": {
                 "verbose": {
@@ -752,7 +752,7 @@
         },
         "DisassociateTagOptionFromResource": {
             "main": "./lib/actions/DisassociateTagOptionFromResource.js",
-            "title": "Disassociates the specified TagOption from the specified resource.",
+            "title": "DisassociateTagOptionFromResource",
             "description": "Disassociates the specified TagOption from the specified resource.",
             "fields": {
                 "verbose": {
@@ -769,8 +769,8 @@
         },
         "EnableAWSOrganizationsAccess": {
             "main": "./lib/actions/EnableAWSOrganizationsAccess.js",
-            "title": "<p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the master account in the organization.</p> <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>",
-            "description": "<p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the master account in the organization.</p> <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>",
+            "title": "EnableAWSOrganizationsAccess",
+            "description": "Enable portfolio sharing feature through AWS Organizations. This API will allow\nService Catalog to receive updates on your organization in order to sync your\nshares with the current structure. This API can only be called by the master\naccount in the organization.\n\nBy calling this API Service Catalog will make a call to\norganizations:EnableAWSServiceAccess on your behalf so that your shares can be\nin sync with any changes in your AWS Organizations structure.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -786,7 +786,7 @@
         },
         "ExecuteProvisionedProductPlan": {
             "main": "./lib/actions/ExecuteProvisionedProductPlan.js",
-            "title": "Provisions or modifies a product based on the resource changes for the specified plan.",
+            "title": "ExecuteProvisionedProductPlan",
             "description": "Provisions or modifies a product based on the resource changes for the specified plan.",
             "fields": {
                 "verbose": {
@@ -803,7 +803,7 @@
         },
         "ExecuteProvisionedProductServiceAction": {
             "main": "./lib/actions/ExecuteProvisionedProductServiceAction.js",
-            "title": "Executes a self-service action against a provisioned product.",
+            "title": "ExecuteProvisionedProductServiceAction",
             "description": "Executes a self-service action against a provisioned product.",
             "fields": {
                 "verbose": {
@@ -820,7 +820,7 @@
         },
         "GetAWSOrganizationsAccessStatus": {
             "main": "./lib/actions/GetAWSOrganizationsAccessStatus.js",
-            "title": "Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master account in the organization.",
+            "title": "GetAWSOrganizationsAccessStatus",
             "description": "Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master account in the organization.",
             "fields": {
                 "verbose": {
@@ -837,7 +837,7 @@
         },
         "ListAcceptedPortfolioShares": {
             "main": "./lib/actions/ListAcceptedPortfolioShares.js",
-            "title": "Lists all portfolios for which sharing was accepted by this account.",
+            "title": "ListAcceptedPortfolioShares",
             "description": "Lists all portfolios for which sharing was accepted by this account.",
             "fields": {
                 "verbose": {
@@ -854,7 +854,7 @@
         },
         "ListConstraintsForPortfolio": {
             "main": "./lib/actions/ListConstraintsForPortfolio.js",
-            "title": "Lists the constraints for the specified portfolio and product.",
+            "title": "ListConstraintsForPortfolio",
             "description": "Lists the constraints for the specified portfolio and product.",
             "fields": {
                 "verbose": {
@@ -871,7 +871,7 @@
         },
         "ListLaunchPaths": {
             "main": "./lib/actions/ListLaunchPaths.js",
-            "title": "Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.",
+            "title": "ListLaunchPaths",
             "description": "Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.",
             "fields": {
                 "verbose": {
@@ -888,7 +888,7 @@
         },
         "ListOrganizationPortfolioAccess": {
             "main": "./lib/actions/ListOrganizationPortfolioAccess.js",
-            "title": "Lists the organization nodes that have access to the specified portfolio. This API can only be called by the master account in the organization.",
+            "title": "ListOrganizationPortfolioAccess",
             "description": "Lists the organization nodes that have access to the specified portfolio. This API can only be called by the master account in the organization.",
             "fields": {
                 "verbose": {
@@ -905,7 +905,7 @@
         },
         "ListPortfolioAccess": {
             "main": "./lib/actions/ListPortfolioAccess.js",
-            "title": "Lists the account IDs that have access to the specified portfolio.",
+            "title": "ListPortfolioAccess",
             "description": "Lists the account IDs that have access to the specified portfolio.",
             "fields": {
                 "verbose": {
@@ -922,7 +922,7 @@
         },
         "ListPortfolios": {
             "main": "./lib/actions/ListPortfolios.js",
-            "title": "Lists all portfolios in the catalog.",
+            "title": "ListPortfolios",
             "description": "Lists all portfolios in the catalog.",
             "fields": {
                 "verbose": {
@@ -939,7 +939,7 @@
         },
         "ListPortfoliosForProduct": {
             "main": "./lib/actions/ListPortfoliosForProduct.js",
-            "title": "Lists all portfolios that the specified product is associated with.",
+            "title": "ListPortfoliosForProduct",
             "description": "Lists all portfolios that the specified product is associated with.",
             "fields": {
                 "verbose": {
@@ -956,7 +956,7 @@
         },
         "ListPrincipalsForPortfolio": {
             "main": "./lib/actions/ListPrincipalsForPortfolio.js",
-            "title": "Lists all principal ARNs associated with the specified portfolio.",
+            "title": "ListPrincipalsForPortfolio",
             "description": "Lists all principal ARNs associated with the specified portfolio.",
             "fields": {
                 "verbose": {
@@ -973,7 +973,7 @@
         },
         "ListProvisionedProductPlans": {
             "main": "./lib/actions/ListProvisionedProductPlans.js",
-            "title": "Lists the plans for the specified provisioned product or all plans to which the user has access.",
+            "title": "ListProvisionedProductPlans",
             "description": "Lists the plans for the specified provisioned product or all plans to which the user has access.",
             "fields": {
                 "verbose": {
@@ -990,7 +990,7 @@
         },
         "ListProvisioningArtifacts": {
             "main": "./lib/actions/ListProvisioningArtifacts.js",
-            "title": "Lists all provisioning artifacts (also known as versions) for the specified product.",
+            "title": "ListProvisioningArtifacts",
             "description": "Lists all provisioning artifacts (also known as versions) for the specified product.",
             "fields": {
                 "verbose": {
@@ -1007,7 +1007,7 @@
         },
         "ListProvisioningArtifactsForServiceAction": {
             "main": "./lib/actions/ListProvisioningArtifactsForServiceAction.js",
-            "title": "Lists all provisioning artifacts (also known as versions) for the specified self-service action.",
+            "title": "ListProvisioningArtifactsForServiceAction",
             "description": "Lists all provisioning artifacts (also known as versions) for the specified self-service action.",
             "fields": {
                 "verbose": {
@@ -1024,7 +1024,7 @@
         },
         "ListRecordHistory": {
             "main": "./lib/actions/ListRecordHistory.js",
-            "title": "Lists the specified requests or all performed requests.",
+            "title": "ListRecordHistory",
             "description": "Lists the specified requests or all performed requests.",
             "fields": {
                 "verbose": {
@@ -1041,7 +1041,7 @@
         },
         "ListResourcesForTagOption": {
             "main": "./lib/actions/ListResourcesForTagOption.js",
-            "title": "Lists the resources associated with the specified TagOption.",
+            "title": "ListResourcesForTagOption",
             "description": "Lists the resources associated with the specified TagOption.",
             "fields": {
                 "verbose": {
@@ -1058,7 +1058,7 @@
         },
         "ListServiceActions": {
             "main": "./lib/actions/ListServiceActions.js",
-            "title": "Lists all self-service actions.",
+            "title": "ListServiceActions",
             "description": "Lists all self-service actions.",
             "fields": {
                 "verbose": {
@@ -1075,7 +1075,7 @@
         },
         "ListServiceActionsForProvisioningArtifact": {
             "main": "./lib/actions/ListServiceActionsForProvisioningArtifact.js",
-            "title": "Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.",
+            "title": "ListServiceActionsForProvisioningArtifact",
             "description": "Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.",
             "fields": {
                 "verbose": {
@@ -1092,7 +1092,7 @@
         },
         "ListTagOptions": {
             "main": "./lib/actions/ListTagOptions.js",
-            "title": "Lists the specified TagOptions or all TagOptions.",
+            "title": "ListTagOptions",
             "description": "Lists the specified TagOptions or all TagOptions.",
             "fields": {
                 "verbose": {
@@ -1109,8 +1109,8 @@
         },
         "ProvisionProduct": {
             "main": "./lib/actions/ProvisionProduct.js",
-            "title": "<p>Provisions the specified product.</p> <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\".</p>",
-            "description": "<p>Provisions the specified product.</p> <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\".</p>",
+            "title": "ProvisionProduct",
+            "description": "Provisions the specified product.\n\nA provisioned product is a resourced instance of a product. For example,\nprovisioning a product based on a CloudFormation template launches a\nCloudFormation stack and its underlying resources. You can check the status of\nthis request using DescribeRecord.\n\nIf the request contains a tag key with an empty list of values, there is a tag\nconflict for that key. Do not include conflicted keys as tags, or this causes\nthe error \"Parameter validation failed: Missing required parameter in Tags[N]:\nValue\".",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1126,7 +1126,7 @@
         },
         "RejectPortfolioShare": {
             "main": "./lib/actions/RejectPortfolioShare.js",
-            "title": "Rejects an offer to share the specified portfolio.",
+            "title": "RejectPortfolioShare",
             "description": "Rejects an offer to share the specified portfolio.",
             "fields": {
                 "verbose": {
@@ -1143,8 +1143,8 @@
         },
         "ScanProvisionedProducts": {
             "main": "./lib/actions/ScanProvisionedProducts.js",
-            "title": "<p>Lists the provisioned products that are available (not terminated).</p> <p>To use additional filtering, see <a>SearchProvisionedProducts</a>.</p>",
-            "description": "<p>Lists the provisioned products that are available (not terminated).</p> <p>To use additional filtering, see <a>SearchProvisionedProducts</a>.</p>",
+            "title": "ScanProvisionedProducts",
+            "description": "Lists the provisioned products that are available (not terminated).\n\nTo use additional filtering, see SearchProvisionedProducts.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1160,7 +1160,7 @@
         },
         "SearchProducts": {
             "main": "./lib/actions/SearchProducts.js",
-            "title": "Gets information about the products to which the caller has access.",
+            "title": "SearchProducts",
             "description": "Gets information about the products to which the caller has access.",
             "fields": {
                 "verbose": {
@@ -1177,7 +1177,7 @@
         },
         "SearchProductsAsAdmin": {
             "main": "./lib/actions/SearchProductsAsAdmin.js",
-            "title": "Gets information about the products for the specified portfolio or all products.",
+            "title": "SearchProductsAsAdmin",
             "description": "Gets information about the products for the specified portfolio or all products.",
             "fields": {
                 "verbose": {
@@ -1194,7 +1194,7 @@
         },
         "SearchProvisionedProducts": {
             "main": "./lib/actions/SearchProvisionedProducts.js",
-            "title": "Gets information about the provisioned products that meet the specified criteria.",
+            "title": "SearchProvisionedProducts",
             "description": "Gets information about the provisioned products that meet the specified criteria.",
             "fields": {
                 "verbose": {
@@ -1211,8 +1211,8 @@
         },
         "TerminateProvisionedProduct": {
             "main": "./lib/actions/TerminateProvisionedProduct.js",
-            "title": "<p>Terminates the specified provisioned product.</p> <p>This operation does not delete any records associated with the provisioned product.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
-            "description": "<p>Terminates the specified provisioned product.</p> <p>This operation does not delete any records associated with the provisioned product.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
+            "title": "TerminateProvisionedProduct",
+            "description": "Terminates the specified provisioned product.\n\nThis operation does not delete any records associated with the provisioned\nproduct.\n\nYou can check the status of this request using DescribeRecord.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1228,7 +1228,7 @@
         },
         "UpdateConstraint": {
             "main": "./lib/actions/UpdateConstraint.js",
-            "title": "Updates the specified constraint.",
+            "title": "UpdateConstraint",
             "description": "Updates the specified constraint.",
             "fields": {
                 "verbose": {
@@ -1245,8 +1245,8 @@
         },
         "UpdatePortfolio": {
             "main": "./lib/actions/UpdatePortfolio.js",
-            "title": "<p>Updates the specified portfolio.</p> <p>You cannot update a product that was shared with you.</p>",
-            "description": "<p>Updates the specified portfolio.</p> <p>You cannot update a product that was shared with you.</p>",
+            "title": "UpdatePortfolio",
+            "description": "Updates the specified portfolio.\n\nYou cannot update a product that was shared with you.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1262,7 +1262,7 @@
         },
         "UpdateProduct": {
             "main": "./lib/actions/UpdateProduct.js",
-            "title": "Updates the specified product.",
+            "title": "UpdateProduct",
             "description": "Updates the specified product.",
             "fields": {
                 "verbose": {
@@ -1279,8 +1279,8 @@
         },
         "UpdateProvisionedProduct": {
             "main": "./lib/actions/UpdateProvisionedProduct.js",
-            "title": "<p>Requests updates to the configuration of the specified provisioned product.</p> <p>If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
-            "description": "<p>Requests updates to the configuration of the specified provisioned product.</p> <p>If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely.</p> <p>You can check the status of this request using <a>DescribeRecord</a>.</p>",
+            "title": "UpdateProvisionedProduct",
+            "description": "Requests updates to the configuration of the specified provisioned product.\n\nIf there are tags associated with the object, they cannot be updated or added.\nDepending on the specific updates requested, this operation can update with no\ninterruption, with some interruption, or replace the provisioned product\nentirely.\n\nYou can check the status of this request using DescribeRecord.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1296,8 +1296,8 @@
         },
         "UpdateProvisioningArtifact": {
             "main": "./lib/actions/UpdateProvisioningArtifact.js",
-            "title": "<p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot update a provisioning artifact for a product that was shared with you.</p>",
-            "description": "<p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot update a provisioning artifact for a product that was shared with you.</p>",
+            "title": "UpdateProvisioningArtifact",
+            "description": "Updates the specified provisioning artifact (also known as a version) for the\nspecified product.\n\nYou cannot update a provisioning artifact for a product that was shared with\nyou.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1313,7 +1313,7 @@
         },
         "UpdateServiceAction": {
             "main": "./lib/actions/UpdateServiceAction.js",
-            "title": "Updates a self-service action.",
+            "title": "UpdateServiceAction",
             "description": "Updates a self-service action.",
             "fields": {
                 "verbose": {
@@ -1330,7 +1330,7 @@
         },
         "UpdateTagOption": {
             "main": "./lib/actions/UpdateTagOption.js",
-            "title": "Updates the specified TagOption.",
+            "title": "UpdateTagOption",
             "description": "Updates the specified TagOption.",
             "fields": {
                 "verbose": {
